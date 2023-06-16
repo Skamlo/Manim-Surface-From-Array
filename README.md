@@ -14,11 +14,11 @@ Copy this code and code and paste it into your project or download the file and 
 First of all prepare a 2D array containing a height map.
 For example you can import an array from image, but then you have to reduced the number of channels to one and scaled it to smaller interval e.g. [0, 1]:
 
-'''python
+```python
 img = cv.imread('inputImg.png')
 img = img[:, :, 0]
 img /= 255
-'''
+```
 
 Input image as visualized as height map:
 <p float="left">
@@ -28,7 +28,7 @@ Input image as visualized as height map:
 The next step is generate a surface from earlier created image.
 First - create an instance of `surfaceFromArray` class and next use `.generate()` method.
 
-'''python
+```python
 class ExampleSurface(ThreeDScene):
     def construct(self):
         self.camera.background_color = "#1f1f1f"
@@ -39,7 +39,7 @@ class ExampleSurface(ThreeDScene):
         self.add(surface)
         self.begin_ambient_camera_rotation(rate=0.43)
         self.wait(15)
-'''
+```
 
 Output animation with surface besed on input image:
 <p float="left">
