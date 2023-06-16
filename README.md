@@ -15,6 +15,8 @@ First of all prepare a 2D array containing a height map.
 For example you can import an array from image, but then you have to reduced the number of channels to one and scaled it to smaller interval e.g. [0, 1]:
 
 ```python
+import cv2 as cv
+
 img = cv.imread('inputImg.png')
 img = img[:, :, 0]
 img /= 255
@@ -31,7 +33,7 @@ First - create an instance of `surfaceFromArray` class and next use `.generate()
 ```python
 class ExampleSurface(ThreeDScene):
     def construct(self):
-        self.camera.background_color = "#1f1f1f"
+        self.camera.background_color = '#1f1f1f'
 
         sfa = surfaceFromArray()
         surface = sfa.generate(img, fill_opacity=1, fill_color=[[17, 61, 0], [138, 255, 92]])
