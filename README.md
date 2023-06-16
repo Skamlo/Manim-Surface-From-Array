@@ -22,7 +22,7 @@ img = img[:, :, 0]
 img /= 255
 ```
 
-Input image as visualized as height map:
+Input image visualized as height map:
 <p float="left">
   <img src="imgs/inputImg.png"/>
 </p>
