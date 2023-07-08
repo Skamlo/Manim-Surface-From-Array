@@ -19,6 +19,7 @@ import cv2 as cv
 
 img = cv.imread('inputImg.png')
 img = img[:, :, 0]
+img = img.astype('float32')
 img /= 255
 ```
 
@@ -34,6 +35,7 @@ First - create an instance of `surfaceFromArray` class and next use `.generate()
 class ExampleSurface(ThreeDScene):
     def construct(self):
         self.camera.background_color = '#1f1f1f'
+        self.set_camera_orientation(phi=60*DEGREES)
 
         sfa = surfaceFromArray()
         surface = sfa.generate(img, fill_opacity=1, fill_color=[[17, 61, 0], [138, 255, 92]])
